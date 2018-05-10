@@ -1,0 +1,44 @@
+body {
+    background-color: #000;
+    color: green;
+    font-family: Courier, Courier New, Monospace;
+    font-size: 17px;
+    max-width: 80ch;
+}
+
+a {
+    color: green;
+}
+
+#cursor {
+    color: #000;
+    background-color: green;
+    height: 16px;
+    width: 1ch;
+    margin-left: -1ch;
+    margin-bottom: -3px;
+}
+
+#content-wrap {
+    max-width: 80ch;
+}
+
+.output {
+}
+
+#input {
+    max-width: 80ch;
+    font-family: Courier, Courier New, Monospace;
+    font-size: 17px;
+    background-color: #000;
+    color: green;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 0;
+    white-space: pre;
+}
+
+#input, #prompt, #cursor {
+    display: inline-block;
+}

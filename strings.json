@@ -1,0 +1,7 @@
+strings = {
+    "about": "Welcome to jdgregson.com, the personal website of Jonathan Gregson. Jonathan is a <a href='http://github.com/jdgregson'>full-stack web developer</a> and IT Administrator by day, and a <a href='https://bugcrowd.com/jdgregson'>wannabe security researcher</a> by night.",
+    "whoami": "www-data",
+    "no_such_file": "No such file or directory",
+    "command_not_found": "command not found",
+    "etc_passwd": "... passwd file ..."
+};
