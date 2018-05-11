@@ -31,4 +31,7 @@ function wget(args) {
   });
   xhttp.open('GET', BACKEND_URL + encodeURIComponent(command));
   xhttp.send();
-}
+}let denied_commands = ('vi vim emacs nano cd cat dog sl service systemctl apt '+
+let denied_commands = ('vi vim emacs nano cd cat dog sl service systemctl apt '+
+    'apt-get yum make install ./configure su sudo chmod chown del rm nc '+
+    'netcat').split(' ');

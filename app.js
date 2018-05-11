@@ -110,6 +110,8 @@ function executeCommand() {
     if(result) {
       echo(result);
     }
+  } else if(denied_commands.indexOf(c) > -1) {
+    echo(`${c}: ${strings.permission_denied}`);
   } else {
     echo(`${c}: ${strings.command_not_found}`);
   }
