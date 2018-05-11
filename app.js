@@ -7,6 +7,7 @@ let cursorPosition = 0;
 let contentWrap = document.getElementById('content-wrap');
 let history = [];
 let selectedHistory = -1;
+let cwd = '/home/jdgregson/htdocs/jdgregson.com/html';
 
 
 function moveCursor(distance) {

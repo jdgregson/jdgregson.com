@@ -2,11 +2,33 @@ function about() {
     return strings.about;
 }
 
+function motd() {
+    return strings.about;
+}
 
 function whoami() {
     return strings.whoami;
 }
 
+function pwd(args) {
+  return cwd;
+}
+
+function ls(args) {
+  let path = args;
+  switch(path) {
+    case '':
+    case undefined:
+    case 'undefined':
+    case '.':
+      return 'index.php db-config.php mysql-passwords.txt';
+    case '/':
+      return 'bin boot dev etc home initrd lib lost+found mnt opt proc root ' +
+          'sbin tmp usr var';
+    default:
+      return `ls: ${path}: ${strings.no_such_file}`;
+  }
+}
 
 function cat(args) {
     switch(args) {
