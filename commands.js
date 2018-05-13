@@ -41,9 +41,13 @@ function cat(args) {
 
 function history(args) {
   let h = historyList.reverse();
+  let len = (h.length).toString().length;
+  let output = '<pre>';
   for(let i=0; i<h.length-1; i++) {
-    echo(`${i}: ${h[i]}`);
+    output += `${((i+1).toString()).padStart(len, ' ')}  ${h[i]}\n`;
   }
+  output += '</pre>';
+  echo(output);
   historyList.reverse();
 }
 
