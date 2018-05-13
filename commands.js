@@ -39,6 +39,14 @@ function cat(args) {
     }
 }
 
+function history(args) {
+  let h = historyList.reverse();
+  for(let i=0; i<h.length-1; i++) {
+    echo(`${i}: ${h[i]}`);
+  }
+  historyList.reverse();
+}
+
 let denied_commands = ('vi vim emacs nano cd cat dog sl service systemctl apt '+
     'apt-get yum make install ./configure su sudo chmod chown del rm nc '+
     'netcat').split(' ');

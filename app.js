@@ -5,7 +5,7 @@ let input = document.getElementById('input');
 let cursor = document.getElementById('cursor');
 let cursorPosition = 0;
 let contentWrap = document.getElementById('content-wrap');
-let history = [];
+let historyList = [];
 let selectedHistory = -1;
 let cwd = '/home/jdgregson/htdocs/jdgregson.com/html';
 let isTyping = false;
@@ -63,7 +63,7 @@ function resetLine() {
 
 function saveHistory(item) {
   if(item) {
-    history.splice(0, 0, item);
+    historyList.splice(0, 0, item);
   }
 }
 
@@ -71,14 +71,14 @@ function saveHistory(item) {
 function getHistory(item) {
   let historyItem;
   selectedHistory += item;
-  if(selectedHistory < 0 || history.length < 1) {
+  if(selectedHistory < 0 || historyList.length < 1) {
     historyItem = '';
     selectedHistory = -1;
-  } else if(selectedHistory >= history.length) {
-    historyItem = history[history.length-1];
-    selectedHistory = history.length-1;
+  } else if(selectedHistory >= historyList.length) {
+    historyItem = historyList[historyList.length-1];
+    selectedHistory = historyList.length-1;
   } else {
-    historyItem = history[selectedHistory];
+    historyItem = historyList[selectedHistory];
   }
   input.innerHTML = historyItem;
   cursorPosition = input.innerHTML.length;
