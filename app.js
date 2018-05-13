@@ -65,6 +65,18 @@ function saveHistory(item) {
   if(item) {
     historyList.splice(0, 0, item);
   }
+  try {
+    localStorage.setItem('history', JSON.stringify(historyList));
+  } catch(e) {
+  }
+}
+
+
+function loadHistory() {
+  let h = localStorage.getItem('history');
+  if(h) {
+    historyList = JSON.parse(h);
+  }
 }
 
 
@@ -182,6 +194,7 @@ let cursorTimer = self.setInterval(() => {
 
 
 window.addEventListener('load', () => {
+  loadHistory();
   input.innerHTML = 'about';
   executeCommand();
 });
