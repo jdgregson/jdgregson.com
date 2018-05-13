@@ -8,6 +8,7 @@ let contentWrap = document.getElementById('content-wrap');
 let history = [];
 let selectedHistory = -1;
 let cwd = '/home/jdgregson/htdocs/jdgregson.com/html';
+let isTyping = false;
 
 
 function moveCursor(distance) {
@@ -91,6 +92,28 @@ function echo(text) {
 }
 
 
+function cursorOn() {
+  let _class = cursor.getAttribute('class');
+  cursor.setAttribute('class', _class.replace(/ blink/g, ''));
+}
+
+
+function cursorOff() {
+  let _class = cursor.getAttribute('class');
+  cursor.setAttribute('class', `${_class} blink`);
+}
+
+
+function cursorToggle() {
+  let _class = cursor.getAttribute('class');
+  if(_class.indexOf('blink') > -1) {
+    cursorOn();
+  } else {
+    cursorOff();
+  }
+}
+
+
 function executeCommand() {
   let c;
   let args;
@@ -144,5 +167,21 @@ function parseKey(e) {
 
 
 window.addEventListener('keydown', (e) => {
+  cursorOn();
+  isTyping = true;
+  self.setTimeout(() => {isTyping = false;}, 1000);
   parseKey(e);
+});
+
+
+let cursorTimer = self.setInterval(() => {
+  if(!isTyping) {
+    cursorToggle();
+  }
+}, 500);
+
+
+window.addEventListener('load', () => {
+  input.innerHTML = 'about';
+  executeCommand();
 });

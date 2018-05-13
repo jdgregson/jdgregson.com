@@ -13,10 +13,16 @@ a {
 #cursor {
     color: #000;
     background-color: green;
-    height: 16px;
+    height: 14px;
     width: 1ch;
     margin-left: -1ch;
     margin-bottom: -3px;
+    padding-bottom: 3px;
+}
+
+#cursor.blink {
+    color: green;
+    background-color: #000;
 }
 
 #content-wrap {
