@@ -134,7 +134,9 @@ function executeCommand() {
   saveHistory(command);
   resetLine();
 
-  if(command.indexOf(' ') > -1) {
+  if(!command) {
+    return;
+  } else if(command.indexOf(' ') > -1) {
     c = command.substr(0, command.indexOf(' '));
     args = command.substr(command.indexOf(' ')+1);
   } else {
@@ -175,6 +177,8 @@ function parseKey(e) {
   } else {
     appendKey(e);
   }
+
+  scrollTo(0, window.innerHeight);
 }
 
 
