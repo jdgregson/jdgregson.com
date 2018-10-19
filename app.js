@@ -178,7 +178,7 @@ function parseKey(e) {
     appendKey(e);
   }
 
-  scrollTo(0, window.innerHeight);
+  scrollTo(0, parseInt(getComputedStyle(contentWrap).height));
 }
 
 
