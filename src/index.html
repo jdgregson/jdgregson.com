@@ -100,62 +100,74 @@
             <tr id="vuln-table-heading">
               <td class="type-header">TYPE</td>
               <td class="impact-header">IMPACT</td>
-              <td class="product-header">PRODUCT</td>
+              <td class="target-class-header">TARGET CLASS</td>
               <td class="vendor-header">VENDOR</td>
               <td class="accepted-header">ACCEPTED</td>
               <td class="duplicate-header">DUPLICATE</td>
               <td class="fixed-header">FIXED</td>
-              <td class="payout-header">PAYOUT</td>
-              <td class="program-header">PROGRAM</td>
-              <td class="writeup-header">WRITEUP</td>
+            </tr>
+            <tr class="vuln-table-entry">
+              <td class="type"><a href="https://seclists.org/fulldisclosure/2020/Nov/30">Unrestricted File Upload</a></td>
+              <td class="impact">P2</td>
+              <td class="target-class">Web</td>
+              <td class="vendor">Fancy Product Designer</td>
+              <td class="accepted">NO</td>
+              <td class="duplicate">NO</td>
+              <td class="fixed">NO</td>
+            </tr>
+            <tr class="vuln-table-entry">
+              <td class="type"><a href="https://seclists.org/fulldisclosure/2020/Nov/29">Stored XSS via SVG Upload</a></td>
+              <td class="impact">P2</td>
+              <td class="target-class">Web</td>
+              <td class="vendor">Fancy Product Designer</td>
+              <td class="accepted">YES</td>
+              <td class="duplicate">NO</td>
+              <td class="fixed">YES</td>
+            </tr>
+            <tr class="vuln-table-entry">
+              <td class="type">Sensitive Information Disclosure</td>
+              <td class="impact">P3</td>
+              <td class="target-class">Web, Desktop</td>
+              <td class="vendor">Bitdefender</td>
+              <td class="accepted">YES</td>
+              <td class="duplicate">NO</td>
+              <td class="fixed">NO</td>
             </tr>
             <tr class="vuln-table-entry">
               <td class="type">Authentication Bypass</td>
-              <td class="impact">HIGH</td>
-              <td class="product undisclosed">UNDISCLOSED</td>
+              <td class="impact">P2</td>
+              <td class="target-class">Desktop</td>
               <td class="vendor">Malwarebytes</td>
               <td class="accepted">YES</td>
               <td class="duplicate">NO</td>
               <td class="fixed">YES</td>
-              <td class="payout">YES</td>
-              <td class="program"><a href="https://hackerone.com/jdgregson">HackerOne</a></td>
-              <td class="writeup">NDA</td>
             </tr>
             <tr class="vuln-table-entry">
               <td class="type">Authentication Bypass</td>
-              <td class="impact">MED</td>
-              <td class="product undisclosed">UNDISCLOSED</td>
-              <td class="vendor">BitDefender</td>
+              <td class="impact">P4</td>
+              <td class="target-class">Mobile</td>
+              <td class="vendor">Bitdefender</td>
               <td class="accepted">YES</td>
               <td class="duplicate">YES</td>
               <td class="fixed">YES</td>
-              <td class="payout">NO</td>
-              <td class="program"><a href="https://bugcrowd.com/jdgregson">BugCrowd</a></td>
-              <td class="writeup">NDA</td>
             </tr>
             <tr class="vuln-table-entry">
               <td class="type">Application-level DOS</td>
-              <td class="impact">HIGH</td>
-              <td class="product undisclosed">UNDISCLOSED</td>
-              <td class="vendor">BitDefender</td>
+              <td class="impact">P3</td>
+              <td class="target-class">Web</td>
+              <td class="vendor">Bitdefender</td>
               <td class="accepted">YES</td>
               <td class="duplicate">NO</td>
               <td class="fixed">YES</td>
-              <td class="payout">YES</td>
-              <td class="program"><a href="https://bugcrowd.com/jdgregson">BugCrowd</a></td>
-              <td class="writeup">NDA</td>
             </tr>
             <tr class="vuln-table-entry-ctf">
-              <td class="type">Reflected XSS</td>
-              <td class="impact">LOW</td>
-              <td class="product">AltoroJ</td>
+              <td class="type"><a href="https://github.com/jdgregson/CTF-Writeups/blob/master/AltoroJ/1-index-jsp-content-error-xss.md">Reflected XSS</a></td>
+              <td class="impact">P4</td>
+              <td class="target-class">Web</td>
               <td class="vendor">IBM</td>
               <td class="accepted">N/A</td>
               <td class="duplicate">N/A</td>
               <td class="fixed">N/A</td>
-              <td class="payout">N/A</td>
-              <td class="program"><a href="https://github.com/hclproducts/AltoroJ">AltoroJ (hackable app)</a></td>
-              <td class="writeup"><a href="https://github.com/jdgregson/CTF-Writeups/blob/master/AltoroJ/1-index-jsp-content-error-xss.md">GitHub</td>
             </tr>
           </table>
         </div>
