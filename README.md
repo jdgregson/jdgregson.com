@@ -1,5 +1,5 @@
 # jdgregson.com
-This is the source code of jdgregson.com, my website built using [Stardust](https://github.com/jdgregson/Stardust).
+This is the source code of [jdgregson.com](https://jdgregson.com), my website built using [Stardust](https://github.com/jdgregson/Stardust).
 
 ## How to build
 Install dev dependencies:
