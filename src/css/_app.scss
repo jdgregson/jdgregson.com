@@ -111,6 +111,24 @@ body {
 #vuln-table .product.undisclosed {
 }
 
+.about-wrap {
+    display: table-row;
+}
+
+.about-text, .brand-image-wrap {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.brand-image {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.brand-bumper {
+    clear: both;
+}
+
 @media (max-width: 600px) {
     .portfolio-image,
     .portfolio-text {
@@ -129,5 +147,16 @@ body {
 
     #vuln-table {
         font-size: 12px;
+    }
+
+    .brand-image-wrap,
+    .about-text {
+        display: block;
+    }
+
+    .brand-image {
+        width: 100px;
+        margin: 20px auto;
+        display: block;
     }
 }
