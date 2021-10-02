@@ -1,6 +1,11 @@
 body {
 }
 
+#outer-wrap {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 #content-outer-wrap {
   position: relative;
   max-width: 1240px;
