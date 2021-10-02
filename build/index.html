@@ -1,306 +1,445 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Jonathan Gregson</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="application-name" content="Stardust App" />
-  <meta name="apple-mobile-web-app-title" content="Stardust App" />
-  <meta name="msapplication-starturl" content="index.html" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="shortcut icon" href="art/appicon-64.png" />
-  <link rel="apple-touch-icon" href="art/appicon-120.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="art/appicon-152.png" />
-  <link rel="apple-touch-icon" sizes="167x167" href="art/appicon-167.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="art/appicon-180.png" />
-  <meta name="description" content="An app built with Stardust." />
-  <meta name="robots" content="index, follow" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
-    rel="stylesheet"
-  />
-  <link href="lib/stardust/css/stardust-preload.css" rel="stylesheet" />
-  <script src="lib/stardust/js/stardust.js"></script>
-  <script src="js/app.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jonathan Gregson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Stardust App" />
+    <meta name="apple-mobile-web-app-title" content="Stardust App" />
+    <meta name="msapplication-starturl" content="index.html" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="shortcut icon" href="art/appicon-64.png" />
+    <link rel="apple-touch-icon" href="art/appicon-120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="art/appicon-152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="art/appicon-167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="art/appicon-180.png" />
+    <meta name="description" content="An app built with Stardust." />
+    <meta name="robots" content="index, follow" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="lib/stardust/css/stardust-preload.css" rel="stylesheet" />
+    <script src="lib/stardust/js/stardust.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <div id="splash-wrap"></div>
+    <script>
+      if (typeof localStorage !== 'undefined') {
+        var sdPrimaryColor = localStorage.getItem('stardust-primary-color');
+        if (sdPrimaryColor) {
+          document.getElementById(
+            'splash-wrap'
+          ).style.backgroundColor = sdPrimaryColor;
+        }
+      }
+    </script>
 
-<div id="splash-wrap"></div>
-<script>if(typeof localStorage!=='undefined'){var sdPrimaryColor=localStorage.getItem('stardust-primary-color');if(sdPrimaryColor){document.getElementById('splash-wrap').style.backgroundColor=sdPrimaryColor;}}</script>
-
-<div id="header">
-  <div id="header-inner">
-    <div id="header-back-wrap" style="right: 100%;">
-      <svg id="header-back-svg">
-        <g transform="matrix(0.5,-0.5,0.5,0.5,10,19)">
-          <path d="M27,2L2,2L2,27"/>
-        </g>
-      </svg>
-    </div>
-    <h1 id="header-title">Jonathan Gregson</h1>
-    <div id="side-menu-button-wrap">
-      <svg id="side-menu-button-svg">
-        <g transform="matrix(1,0,0,1,1,3)">
-          <g transform="matrix(1,0,0,1,3,1)">
-            <path d="M6,16.037L26,16.037"/>
-          </g>
-          <g transform="matrix(1,0,0,1,3,-7)">
-            <path d="M6,16.037L26,16.037"/>
-          </g>
-          <g transform="matrix(1,0,0,1,3,9)">
-            <path d="M6,16.037L26,16.037"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-</div>
-<div class="bumper"></div>
-<div id="loading-bar"></div>
-
-<div id="content-outer-wrap">
-  <div id="content-inner-wrap">
-<!-- CONTENT START -->
-
-    <div id="about-outer-wrap">
-      <div id="about-inner-wrap">
-        <div class="section-title">About</div>
-        <div class="about-wrap">
-          <div class="brand-image-wrap">
-            <img class="brand-image" src="art/brand.png">
-          </div>
-          <div class="about-text">An experienced developer and IT professional with a deep passion for information security. Bringing 5 years of experience administering security on endpoints, servers, cloud systems, email systems, and web applications. A self-starter and quick learner, with a track record of effective communication with executives, users, and vendors. Ready to grow professionally and be part of something bigger.</div>
-          <div class="brand-bumper"></div>
+    <div id="header">
+      <div id="header-inner">
+        <div id="header-back-wrap" style="right: 100%">
+          <svg id="header-back-svg">
+            <g transform="matrix(0.5,-0.5,0.5,0.5,10,19)">
+              <path d="M27,2L2,2L2,27" />
+            </g>
+          </svg>
         </div>
-        <div id="about-list-wrap">
-          <div class="one-third first">
-            <span class="subsection-title">TECHNICAL</span>
-            <ul id="technical-ul">
-              <li><b>Programming languages:</b> JavaScript, TypeScript, PowerShell, Python, Java</li>
-              <li><b>Operating systems:</b> Windows (XP-10, Server 2008-2019), Linux (Ubuntu, CentOS, RHEL, Kali)</li>
-              <li><b>AWS services:</b> EC2, S3, SES, IAM</li>
-              <li><b>Other:</b> Office 365, Azure, Hyper-V, Active Directory, SonicWall, Kaspersky, Bitdefender</li>
-            </ul>
-          </div>
-          <div class="one-third">
-            <span class="subsection-title">LINKS</span>
-            <ul>
-              <li><a href="https://github.com/jdgregson">GitHub</a></li>
-              <li><a href="https://hackerone.com/jdgregson">HackerOne</a></li>
-              <li><a href="https://bugcrowd.com/jdgregson">BugCrowd</a></li>
-              <li><a href="https://www.linkedin.com/in/jdgregson/">LinkedIn</a></li>
-              <li><a href="https://stackoverflow.com/users/4017749/jdgregson">StackOverflow</a></li>
-            </ul>
-          </div>
-          <div class="one-third">
-            <span class="subsection-title">RECOGNITION</span>
-            <ul>
-              <li><a href="https://www.bitdefender.com/site/view/bug-bounty-hall-of-fame.html">Bitdefender Hall of Fame</a></li>
-              <li><a href="https://www.venafi.com/blog/have-cyber-attackers-impersonated-microsofts-domain-bogus-certificates?utm_source=socialmedia&utm_medium=Bora&utm_campaign=Microsoft-OWA-hack-blog">"security researcher"</a></li>
-            </ul>
-          </div>
+        <h1 id="header-title">Jonathan Gregson</h1>
+        <div id="side-menu-button-wrap">
+          <svg id="side-menu-button-svg">
+            <g transform="matrix(1,0,0,1,1,3)">
+              <g transform="matrix(1,0,0,1,3,1)">
+                <path d="M6,16.037L26,16.037" />
+              </g>
+              <g transform="matrix(1,0,0,1,3,-7)">
+                <path d="M6,16.037L26,16.037" />
+              </g>
+              <g transform="matrix(1,0,0,1,3,9)">
+                <path d="M6,16.037L26,16.037" />
+              </g>
+            </g>
+          </svg>
         </div>
       </div>
     </div>
+    <div class="bumper"></div>
+    <div id="loading-bar"></div>
 
-    <div id="sec-portfolio-outer-wrap">
-      <div id="sec-portfolio-inner-wrap">
-        <div class="section-title">Vulnerability Portfolio</div>
-        <div id="vuln-table-wrap" class="card card-1">
-          <table id="vuln-table">
-            <tr id="vuln-table-heading">
-              <td class="type-header">TYPE</td>
-              <td class="impact-header">IMPACT</td>
-              <td class="target-class-header">TARGET CLASS</td>
-              <td class="vendor-header">VENDOR</td>
-              <td class="accepted-header">ACCEPTED</td>
-              <td class="duplicate-header">DUPLICATE</td>
-              <td class="fixed-header">FIXED</td>
-            </tr>
-            <tr class="vuln-table-entry">
-              <td class="type"><a href="https://github.com/jdgregson/Disclosures/tree/master/microsoft/wdag-dos-long-hostname">DoS</a></td>
-              <td class="impact">P3 - MEDIUM</td>
-              <td class="target-class">Web</td>
-              <td class="vendor">Microsoft</td>
-              <td class="accepted">NO</td>
-              <td class="duplicate">?</td>
-              <td class="fixed">NO</td>
-            </tr>
-            <tr class="vuln-table-entry">
-              <td class="type">Authentication Bypass</td>
-              <td class="impact">P1 - CRITICAL</td>
-              <td class="target-class">Web</td>
-              <td class="vendor">TaxCloud</td>
-              <td class="accepted">YES</td>
-              <td class="duplicate">NO</td>
-              <td class="fixed">YES</td>
-            </tr>
-            <tr class="vuln-table-entry">
-              <td class="type">Authentication Bypass</td>
-              <td class="impact">P3 - MEDIUM</td>
-              <td class="target-class">Desktop</td>
-              <td class="vendor">Bitdefender</td>
-              <td class="accepted">YES</td>
-              <td class="duplicate">NO</td>
-              <td class="fixed">NO</td>
-            </tr>
-            <tr class="vuln-table-entry">
-              <td class="type"><a href="https://seclists.org/fulldisclosure/2020/Nov/30">Unrestricted File Upload</a></td>
-              <td class="impact">P3 - MEDIUM</td>
-              <td class="target-class">Web</td>
-              <td class="vendor">Fancy Product Designer</td>
-              <td class="accepted">NO</td>
-              <td class="duplicate">NO</td>
-              <td class="fixed">NO</td>
-            </tr>
-            <tr class="vuln-table-entry">
-              <td class="type"><a href="https://seclists.org/fulldisclosure/2020/Nov/29">Stored XSS via SVG Upload</a></td>
-              <td class="impact">P2 - HIGH</td>
-              <td class="target-class">Web</td>
-              <td class="vendor">Fancy Product Designer</td>
-              <td class="accepted">YES</td>
-              <td class="duplicate">NO</td>
-              <td class="fixed">YES</td>
-            </tr>
-            <tr class="vuln-table-entry">
-              <td class="type">Sensitive Information Disclosure</td>
-              <td class="impact">P3 - MEDIUM</td>
-              <td class="target-class">Web, Desktop</td>
-              <td class="vendor">Bitdefender</td>
-              <td class="accepted">YES</td>
-              <td class="duplicate">NO</td>
-              <td class="fixed">NO</td>
-            </tr>
-            <tr class="vuln-table-entry">
-              <td class="type">Authentication Bypass</td>
-              <td class="impact">P2 - HIGH</td>
-              <td class="target-class">Desktop</td>
-              <td class="vendor">Malwarebytes</td>
-              <td class="accepted">YES</td>
-              <td class="duplicate">NO</td>
-              <td class="fixed">YES</td>
-            </tr>
-            <tr class="vuln-table-entry">
-              <td class="type">Authentication Bypass</td>
-              <td class="impact">P4 - LOW</td>
-              <td class="target-class">Mobile</td>
-              <td class="vendor">Bitdefender</td>
-              <td class="accepted">YES</td>
-              <td class="duplicate">YES</td>
-              <td class="fixed">YES</td>
-            </tr>
-            <tr class="vuln-table-entry">
-              <td class="type">Application-level DoS</td>
-              <td class="impact">P3 - MEDIUM</td>
-              <td class="target-class">Web</td>
-              <td class="vendor">Bitdefender</td>
-              <td class="accepted">YES</td>
-              <td class="duplicate">NO</td>
-              <td class="fixed">YES</td>
-            </tr>
-            <tr class="vuln-table-entry-ctf">
-              <td class="type"><a href="https://github.com/jdgregson/CTF-Writeups/blob/master/AltoroJ/1-index-jsp-content-error-xss.md">Reflected XSS</a></td>
-              <td class="impact">P4 - LOW</td>
-              <td class="target-class">Web</td>
-              <td class="vendor">IBM</td>
-              <td class="accepted">N/A</td>
-              <td class="duplicate">N/A</td>
-              <td class="fixed">N/A</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
+    <div id="content-outer-wrap">
+      <div id="content-inner-wrap">
+        <!-- CONTENT START -->
 
-    <div id="portfolio-outer-wrap">
-      <div id="portfolio-inner-wrap">
-        <div class="section-title">Development Portfolio</div>
-
-        <div class="portfolio-item card card-2">
-          <div class="portfolio-title">Frequency Distribution Calculator</div>
-          <div class="portfolio-content">
-            <div class="portfolio-image">
-              <a href="https://frequencydistributioncalculator.com/" target="_blank">
-                <img src="portfolio/frequencydistributioncalculator/frequencydistributioncalculator.png">
-              </a>
+        <div id="about-outer-wrap">
+          <div id="about-inner-wrap">
+            <div class="section-title">About</div>
+            <div class="about-wrap">
+              <div class="brand-image-wrap">
+                <img class="brand-image" src="art/brand.png" />
+              </div>
+              <div class="about-text">
+                An experienced developer and IT professional with a deep passion
+                for information security. Bringing 5 years of experience
+                administering security on endpoints, servers, cloud systems,
+                email systems, and web applications. A self-starter and quick
+                learner, with a track record of effective communication with
+                executives, users, and vendors. Ready to grow professionally and
+                be part of something bigger.
+              </div>
+              <div class="brand-bumper"></div>
             </div>
-            <div class="portfolio-text">
-              <span class="label">About:</span><span class="text">Frequency Distribution Calculator is a tool to help you calculate and analyze word and character frequency distribution in text.</span><br>
-              <span class="label">Technologies:</span><span class="text">TypeScript, Stardust, SCSS, NPM, Git, AWS</span><br>
-              <span class="label">Demo:</span><span class="text"><a href="https://frequencydistributioncalculator.com/" target="_blank">https://frequencydistributioncalculator.com/</a></span><br>
-              <span class="label">Source:</span><span class="text"><a href="https://github.com/jdgregson/Frequency-Distribution-Calculator" target="_blank">GitHub</a></span><br>
+            <div id="about-list-wrap">
+              <div class="one-third first">
+                <span class="subsection-title">TECHNICAL</span>
+                <ul id="technical-ul">
+                  <li>
+                    <b>Programming languages:</b> JavaScript, TypeScript,
+                    PowerShell, Python, Java
+                  </li>
+                  <li>
+                    <b>Operating systems:</b> Windows (XP-10, Server 2008-2019),
+                    Linux (Ubuntu, CentOS, RHEL, Kali)
+                  </li>
+                  <li><b>AWS services:</b> EC2, S3, SES, IAM</li>
+                  <li>
+                    <b>Other:</b> Office 365, Azure, Hyper-V, Active Directory,
+                    SonicWall, Kaspersky, Bitdefender
+                  </li>
+                </ul>
+              </div>
+              <div class="one-third">
+                <span class="subsection-title">LINKS</span>
+                <ul>
+                  <li><a href="https://github.com/jdgregson">GitHub</a></li>
+                  <li>
+                    <a href="https://hackerone.com/jdgregson">HackerOne</a>
+                  </li>
+                  <li><a href="https://bugcrowd.com/jdgregson">BugCrowd</a></li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/jdgregson/"
+                      >LinkedIn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://stackoverflow.com/users/4017749/jdgregson"
+                      >StackOverflow</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="one-third">
+                <span class="subsection-title">RECOGNITION</span>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.bitdefender.com/site/view/bug-bounty-hall-of-fame.html"
+                      >Bitdefender Hall of Fame</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.venafi.com/blog/have-cyber-attackers-impersonated-microsofts-domain-bogus-certificates?utm_source=socialmedia&utm_medium=Bora&utm_campaign=Microsoft-OWA-hack-blog"
+                      >"security researcher"</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="portfolio-item card card-2">
-          <div class="portfolio-title">Stardust</div>
-          <div class="portfolio-content">
-            <div class="portfolio-image">
-              <a href="https://jdgregson.github.io/stardust-demo/" target="_blank">
-                <img src="portfolio/stardust/stardust.png">
-              </a>
-            </div>
-            <div class="portfolio-text">
-              <span class="label">About:</span><span class="text">Stardust is what my apps are made of. A web application framework comprised of a small JavaScript and CSS library with no production dependencies and a build system. The JavaScript library (and application code by default) is TypeScript and compiles back to ES5 for compatibility with Internet Explorer 11. A dark and light theme are provided using SCSS for the Stardust UI and a separate theme for application SCSS.</span><br>
-              <span class="label">Technologies:</span><span class="text">TypeScript, SCSS, NPM, Git</span><br>
-              <span class="label">Demo:</span><span class="text"><a href="https://jdgregson.github.io/stardust-demo/" target="_blank">https://jdgregson.github.io/stardust-demo/</a></span><br>
-              <span class="label">Source:</span><span class="text"><a href="https://github.com/jdgregson/Stardust" target="_blank">GitHub</a></span><br>
+        <div id="sec-portfolio-outer-wrap">
+          <div id="sec-portfolio-inner-wrap">
+            <div class="section-title">Vulnerability Portfolio</div>
+            <div id="vuln-table-wrap" class="card card-1">
+              <table id="vuln-table">
+                <tr id="vuln-table-heading">
+                  <td class="type-header">TYPE</td>
+                  <td class="impact-header">IMPACT</td>
+                  <td class="target-class-header">TARGET CLASS</td>
+                  <td class="vendor-header">VENDOR</td>
+                  <td class="accepted-header">ACCEPTED</td>
+                  <td class="duplicate-header">DUPLICATE</td>
+                  <td class="fixed-header">FIXED</td>
+                </tr>
+                <tr class="vuln-table-entry">
+                  <td class="type">
+                    <a
+                      href="https://github.com/jdgregson/Disclosures/tree/master/microsoft/wdag-dos-long-hostname"
+                      >DoS</a
+                    >
+                  </td>
+                  <td class="impact">P3 - MEDIUM</td>
+                  <td class="target-class">Web</td>
+                  <td class="vendor">Microsoft</td>
+                  <td class="accepted">NO</td>
+                  <td class="duplicate">?</td>
+                  <td class="fixed">NO</td>
+                </tr>
+                <tr class="vuln-table-entry">
+                  <td class="type">Authentication Bypass</td>
+                  <td class="impact">P1 - CRITICAL</td>
+                  <td class="target-class">Web</td>
+                  <td class="vendor">TaxCloud</td>
+                  <td class="accepted">YES</td>
+                  <td class="duplicate">NO</td>
+                  <td class="fixed">YES</td>
+                </tr>
+                <tr class="vuln-table-entry">
+                  <td class="type">Authentication Bypass</td>
+                  <td class="impact">P3 - MEDIUM</td>
+                  <td class="target-class">Desktop</td>
+                  <td class="vendor">Bitdefender</td>
+                  <td class="accepted">YES</td>
+                  <td class="duplicate">NO</td>
+                  <td class="fixed">NO</td>
+                </tr>
+                <tr class="vuln-table-entry">
+                  <td class="type">
+                    <a href="https://seclists.org/fulldisclosure/2020/Nov/30"
+                      >Unrestricted File Upload</a
+                    >
+                  </td>
+                  <td class="impact">P3 - MEDIUM</td>
+                  <td class="target-class">Web</td>
+                  <td class="vendor">Fancy Product Designer</td>
+                  <td class="accepted">NO</td>
+                  <td class="duplicate">NO</td>
+                  <td class="fixed">NO</td>
+                </tr>
+                <tr class="vuln-table-entry">
+                  <td class="type">
+                    <a href="https://seclists.org/fulldisclosure/2020/Nov/29"
+                      >Stored XSS via SVG Upload</a
+                    >
+                  </td>
+                  <td class="impact">P2 - HIGH</td>
+                  <td class="target-class">Web</td>
+                  <td class="vendor">Fancy Product Designer</td>
+                  <td class="accepted">YES</td>
+                  <td class="duplicate">NO</td>
+                  <td class="fixed">YES</td>
+                </tr>
+                <tr class="vuln-table-entry">
+                  <td class="type">Sensitive Information Disclosure</td>
+                  <td class="impact">P3 - MEDIUM</td>
+                  <td class="target-class">Web, Desktop</td>
+                  <td class="vendor">Bitdefender</td>
+                  <td class="accepted">YES</td>
+                  <td class="duplicate">NO</td>
+                  <td class="fixed">NO</td>
+                </tr>
+                <tr class="vuln-table-entry">
+                  <td class="type">Authentication Bypass</td>
+                  <td class="impact">P2 - HIGH</td>
+                  <td class="target-class">Desktop</td>
+                  <td class="vendor">Malwarebytes</td>
+                  <td class="accepted">YES</td>
+                  <td class="duplicate">NO</td>
+                  <td class="fixed">YES</td>
+                </tr>
+                <tr class="vuln-table-entry">
+                  <td class="type">Authentication Bypass</td>
+                  <td class="impact">P4 - LOW</td>
+                  <td class="target-class">Mobile</td>
+                  <td class="vendor">Bitdefender</td>
+                  <td class="accepted">YES</td>
+                  <td class="duplicate">YES</td>
+                  <td class="fixed">YES</td>
+                </tr>
+                <tr class="vuln-table-entry">
+                  <td class="type">Application-level DoS</td>
+                  <td class="impact">P3 - MEDIUM</td>
+                  <td class="target-class">Web</td>
+                  <td class="vendor">Bitdefender</td>
+                  <td class="accepted">YES</td>
+                  <td class="duplicate">NO</td>
+                  <td class="fixed">YES</td>
+                </tr>
+                <tr class="vuln-table-entry-ctf">
+                  <td class="type">
+                    <a
+                      href="https://github.com/jdgregson/CTF-Writeups/blob/master/AltoroJ/1-index-jsp-content-error-xss.md"
+                      >Reflected XSS</a
+                    >
+                  </td>
+                  <td class="impact">P4 - LOW</td>
+                  <td class="target-class">Web</td>
+                  <td class="vendor">IBM</td>
+                  <td class="accepted">N/A</td>
+                  <td class="duplicate">N/A</td>
+                  <td class="fixed">N/A</td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
 
-        <div class="portfolio-item card card-2">
-          <div class="portfolio-title">ExpressRAIL Assistant</div>
-          <div class="portfolio-content">
-            <div class="portfolio-image">
-              <a href="https://jdgregson.com/portfolio/expressrail-app" target="_blank">
-                <img src="portfolio/expressrail-app/expressrail-app.png">
-              </a>
+        <div id="portfolio-outer-wrap">
+          <div id="portfolio-inner-wrap">
+            <div class="section-title">Development Portfolio</div>
+
+            <div class="portfolio-item card card-2">
+              <div class="portfolio-title">
+                Frequency Distribution Calculator
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-image">
+                  <a
+                    href="https://frequencydistributioncalculator.com/"
+                    target="_blank"
+                  >
+                    <img
+                      src="portfolio/frequencydistributioncalculator/frequencydistributioncalculator.png"
+                    />
+                  </a>
+                </div>
+                <div class="portfolio-text">
+                  <span class="label">About:</span
+                  ><span class="text"
+                    >Frequency Distribution Calculator is a tool to help you
+                    calculate and analyze word and character frequency
+                    distribution in text.</span
+                  ><br />
+                  <span class="label">Technologies:</span
+                  ><span class="text"
+                    >TypeScript, Stardust, SCSS, NPM, Git, AWS</span
+                  ><br />
+                  <span class="label">Demo:</span
+                  ><span class="text"
+                    ><a
+                      href="https://frequencydistributioncalculator.com/"
+                      target="_blank"
+                      >https://frequencydistributioncalculator.com/</a
+                    ></span
+                  ><br />
+                  <span class="label">Source:</span
+                  ><span class="text"
+                    ><a
+                      href="https://github.com/jdgregson/Frequency-Distribution-Calculator"
+                      target="_blank"
+                      >GitHub</a
+                    ></span
+                  ><br />
+                </div>
+              </div>
             </div>
-            <div class="portfolio-text">
-              <span class="label">About:</span><span class="text">ExpressRAIL Assistant was deployed to retail floors and reseller's websites and facilitated the ordering of one of the company's railing systems. After generating a list of needed parts, the list and the customer's drawing could be emailed to the customer. This feature added significant security concerns, since it rendered user-generated HTML, converted it to a PDF, and emailed it to a given email address. To better secure this feature, the backend service was restricted such that it would only communicate with the app's frontend service, a keyword filter was put in place to prevent the app from parsing unexpected HTML, and rate limiting was put in place to prevent the backend service from being abused as a spam gateway.</span><br>
-              <span class="label">Technologies:</span><span class="text">JavaScript, CSS, PHP, EC2, wkhtmltopdf, Git</span><br>
+
+            <div class="portfolio-item card card-2">
+              <div class="portfolio-title">Stardust</div>
+              <div class="portfolio-content">
+                <div class="portfolio-image">
+                  <a
+                    href="https://jdgregson.github.io/stardust-demo/"
+                    target="_blank"
+                  >
+                    <img src="portfolio/stardust/stardust.png" />
+                  </a>
+                </div>
+                <div class="portfolio-text">
+                  <span class="label">About:</span
+                  ><span class="text"
+                    >Stardust is what my apps are made of. A web application
+                    framework comprised of a small JavaScript and CSS library
+                    with no production dependencies and a build system. The
+                    JavaScript library (and application code by default) is
+                    TypeScript and compiles back to ES5 for compatibility with
+                    Internet Explorer 11. A dark and light theme are provided
+                    using SCSS for the Stardust UI and a separate theme for
+                    application SCSS.</span
+                  ><br />
+                  <span class="label">Technologies:</span
+                  ><span class="text">TypeScript, SCSS, NPM, Git</span><br />
+                  <span class="label">Demo:</span
+                  ><span class="text"
+                    ><a
+                      href="https://jdgregson.github.io/stardust-demo/"
+                      target="_blank"
+                      >https://jdgregson.github.io/stardust-demo/</a
+                    ></span
+                  ><br />
+                  <span class="label">Source:</span
+                  ><span class="text"
+                    ><a
+                      href="https://github.com/jdgregson/Stardust"
+                      target="_blank"
+                      >GitHub</a
+                    ></span
+                  ><br />
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item card card-2">
+              <div class="portfolio-title">ExpressRAIL Assistant</div>
+              <div class="portfolio-content">
+                <div class="portfolio-image">
+                  <a
+                    href="https://jdgregson.com/portfolio/expressrail-app"
+                    target="_blank"
+                  >
+                    <img src="portfolio/expressrail-app/expressrail-app.png" />
+                  </a>
+                </div>
+                <div class="portfolio-text">
+                  <span class="label">About:</span
+                  ><span class="text"
+                    >ExpressRAIL Assistant was deployed to retail floors and
+                    reseller's websites and facilitated the ordering of one of
+                    the company's railing systems. After generating a list of
+                    needed parts, the list and the customer's drawing could be
+                    emailed to the customer. This feature added significant
+                    security concerns, since it rendered user-generated HTML,
+                    converted it to a PDF, and emailed it to a given email
+                    address. To better secure this feature, the backend service
+                    was restricted such that it would only communicate with the
+                    app's frontend service, a keyword filter was put in place to
+                    prevent the app from parsing unexpected HTML, and rate
+                    limiting was put in place to prevent the backend service
+                    from being abused as a spam gateway.</span
+                  ><br />
+                  <span class="label">Technologies:</span
+                  ><span class="text"
+                    >JavaScript, CSS, PHP, EC2, wkhtmltopdf, Git</span
+                  ><br />
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- CONTENT END -->
       </div>
     </div>
 
-<!-- CONTENT END -->
-  </div>
-</div>
+    <div id="side-menu-wrap">
+      <div id="side-menu-inner">
+        <!-- BEGIN MENU ITEMS -->
 
-<div id="side-menu-wrap">
-  <div id="side-menu-inner">
-<!-- BEGIN MENU ITEMS -->
+        <div class="side-menu-hr"></div>
+        <div class="side-menu-row">
+          <span class="side-menu-text">Theme</span>
+          <div class="side-menu-action">
+            <select bind-option="theme" bind-action="change:applyTheme">
+              <option value="dark">DARK</option>
+              <option value="light">LIGHT</option>
+            </select>
+          </div>
+        </div>
+        <div class="side-menu-row" id="reset-button" bind-action="click:reset">
+          <span class="side-menu-text">Reset settings</span>
+        </div>
 
-    <div class="side-menu-hr"></div>
-    <div class="side-menu-row">
-      <span class="side-menu-text">Theme</span>
-      <div class="side-menu-action">
-        <select bind-option="theme" bind-action="change:applyTheme">
-          <option value="dark">DARK</option>
-          <option value="light">LIGHT</option>
-        </select>
+        <!-- END MENU ITEMS -->
       </div>
     </div>
-    <div class="side-menu-row" id="reset-button" bind-action="click:reset">
-      <span class="side-menu-text">Reset settings</span>
-    </div>
 
-<!-- END MENU ITEMS -->
-  </div>
-</div>
-
-<script>
-  window.addEventListener('DOMContentLoaded', function() {
-    initApp();
-  });
-</script>
-
-</body>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        initApp();
+      });
+    </script>
+  </body>
 </html>

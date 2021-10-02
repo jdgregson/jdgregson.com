@@ -3,7 +3,7 @@ const initApp = () => {
   navigator.serviceWorker.register('sw.js');
 
   initStardust({
-    'actions': {},
-    'options': {}
+    actions: {},
+    options: {},
   });
 };

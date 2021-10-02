@@ -92,7 +92,8 @@
 .about-wrap {
   display: table-row; }
 
-.about-text, .brand-image-wrap {
+.about-text,
+.brand-image-wrap {
   display: table-cell;
   vertical-align: middle; }
 
