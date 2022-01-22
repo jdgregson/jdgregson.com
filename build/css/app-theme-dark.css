@@ -1,5 +1,11 @@
 /* Define app variables here */
 /* Re-define Startdust variables here */
+a, a:link {
+  color: #00adc1; }
+
+a:visited, a:active {
+  color: #00707d; }
+
 #outer-wrap {
   width: 100% !important;
   height: 100% !important; }

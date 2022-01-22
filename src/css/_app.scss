@@ -1,4 +1,9 @@
-body {
+a, a:link {
+  color: $SDlinkTextColor;
+}
+
+a:visited, a:active {
+  color: $SDlinkTextColorVisited;
 }
 
 #outer-wrap {
