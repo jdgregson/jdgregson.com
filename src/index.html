@@ -86,7 +86,7 @@
                 </div>
                 <div class="about-text">
                   An experienced security, development, and IT professional with
-                  a deep passion for information security. Bringing 5 years of
+                  a deep passion for information security. Bringing 6 years of
                   experience administering, testing, and maintaining security in
                   the small business space, and 2 years researching and
                   exploiting vulnerabilities professionally and under bug bounty
@@ -99,22 +99,17 @@
                   <span class="subsection-title">TECHNICAL</span>
                   <ul id="technical-ul">
                     <li>
-                      <b>Programming languages:</b> JavaScript, TypeScript,
-                      PowerShell, Python, Java, Bash, PHP
+                      <b>Programming languages:</b> JavaScript, TypeScript, PowerShell, Python, Java, Bash, PHP
                     </li>
                     <li>
-                      <b>Operating systems:</b> Windows (XP-11, Server
-                      2008-2019), Linux (Ubuntu, CentOS, RHEL, Kali), macOS
+                      <b>Operating systems:</b> Windows (2000 – 11, Server 2008 R2 – 2019), Linux (Ubuntu, CentOS, RHEL, Kali), macOS
                     </li>
-                    <li><b>AWS services:</b> EC2, S3, SES, IAM</li>
+                    <li><b>Cloud providers:</b> AWS, Digital Ocean, Cloudflare, Azure</li>
                     <li>
-                      <b>Tools:</b> DevTools, Burp Suite, Nmap, Metasploit,
-                      Postman, Wireshark
+                      <b>Tools:</b> Dev Tools, Postman, Burp Suite, Git, Jupyter Notebook, Metasploit, Docker, Snyk, Nmap
                     </li>
                     <li>
-                      <b>Other:</b> Office 365, YARA, Azure, Hyper-V, VMWare,
-                      Active Directory, Group Policy, SonicWall, Kaspersky,
-                      Bitdefender, Apache, MySQL, WordPress
+                      <b>Misc:</b> DAST, SAST, OWASP Top 10, MySQL, WordPress, SharePoint Online, PCI DSS
                     </li>
                   </ul>
                 </div>
@@ -122,6 +117,7 @@
                   <span class="subsection-title">LINKS</span>
                   <ul>
                     <li><a href="https://github.com/jdgregson">GitHub</a></li>
+                    <li><a href="https://twitter.com/jdgregson">Twitter</a></li>
                     <li>
                       <a href="https://hackerone.com/jdgregson">HackerOne</a>
                     </li>
@@ -151,14 +147,20 @@
                   <ul>
                     <li>
                       <a
-                        href="https://www.bitdefender.com/site/view/bug-bounty-hall-of-fame.html"
-                        >Bitdefender Hall of Fame</a
+                        href="https://github.com/cloudflare/advisories/security/advisories/GHSA-m6w8-3pf9-p68r"
+                        >Cloudflare</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://www.venafi.com/blog/have-cyber-attackers-impersonated-microsofts-domain-bogus-certificates?utm_source=socialmedia&utm_medium=Bora&utm_campaign=Microsoft-OWA-hack-blog"
-                        >"security researcher"</a
+                        href="https://msrc.microsoft.com/update-guide/acknowledgement/online"
+                        >Microsoft</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.bitdefender.com/site/view/bug-bounty-hall-of-fame.html"
+                        >Bitdefender</a
                       >
                     </li>
                   </ul>
@@ -174,155 +176,11 @@
                 <table id="vuln-table">
                   <tr id="vuln-table-heading">
                     <td class="type-header">TYPE</td>
+                    <td class="type-app">APPLICATION</td>
+                    <td class="vendor-header">VENDOR</td>
                     <td class="impact-header">IMPACT</td>
                     <td class="target-class-header">TARGET CLASS</td>
-                    <td class="vendor-header">VENDOR</td>
-                    <td class="accepted-header">ACCEPTED</td>
-                    <td class="duplicate-header">DUPLICATE</td>
                     <td class="fixed-header">FIXED</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">Use of Weak Hash</td>
-                    <td class="impact">P4 - LOW</td>
-                    <td class="target-class">Desktop</td>
-                    <td class="vendor">Bitdefender</td>
-                    <td class="accepted">YES</td>
-                    <td class="duplicate">NO</td>
-                    <td class="fixed">NO</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">
-                      <a
-                        href="https://github.com/jdgregson/Disclosures/tree/master/microsoft/wdag-dos-long-hostname"
-                        >DoS</a
-                      >
-                    </td>
-                    <td class="impact">P3 - MEDIUM</td>
-                    <td class="target-class">Web</td>
-                    <td class="vendor">Microsoft</td>
-                    <td class="accepted">NO</td>
-                    <td class="duplicate">?</td>
-                    <td class="fixed">NO</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">Authentication Bypass</td>
-                    <td class="impact">P1 - CRITICAL</td>
-                    <td class="target-class">Web</td>
-                    <td class="vendor">TaxCloud</td>
-                    <td class="accepted">YES</td>
-                    <td class="duplicate">NO</td>
-                    <td class="fixed">YES</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">
-                      <a href="https://github.com/jdgregson/Disclosures/tree/master/xfinity/xb3-authenticated-reflected-xss"
-                        >Authenticated Reflected XSS</a
-                      >
-                    </td>
-                    <td class="impact">P3 - MEDIUM</td>
-                    <td class="target-class">Web</td>
-                    <td class="vendor">Cisco/Technicolor</td>
-                    <td class="accepted">NO</td>
-                    <td class="duplicate">?</td>
-                    <td class="fixed">NO</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">
-                      <a href="https://github.com/jdgregson/Disclosures/tree/master/xfinity/xb3-authenticated-reflected-xss"
-                        >DoS</a
-                      >
-                    </td>
-                    <td class="impact">P3 - MEDIUM</td>
-                    <td class="target-class">Web</td>
-                    <td class="vendor">Cisco/Technicolor</td>
-                    <td class="accepted">NO</td>
-                    <td class="duplicate">?</td>
-                    <td class="fixed">NO</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">Authentication Bypass</td>
-                    <td class="impact">P3 - MEDIUM</td>
-                    <td class="target-class">Desktop</td>
-                    <td class="vendor">Bitdefender</td>
-                    <td class="accepted">YES</td>
-                    <td class="duplicate">NO</td>
-                    <td class="fixed">NO</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">
-                      <a href="https://seclists.org/fulldisclosure/2020/Nov/30"
-                        >Unrestricted File Upload</a
-                      >
-                    </td>
-                    <td class="impact">P3 - MEDIUM</td>
-                    <td class="target-class">Web</td>
-                    <td class="vendor">Fancy Product Designer</td>
-                    <td class="accepted">NO</td>
-                    <td class="duplicate">NO</td>
-                    <td class="fixed">NO</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">
-                      <a href="https://seclists.org/fulldisclosure/2020/Nov/29"
-                        >Stored XSS via SVG Upload</a
-                      >
-                    </td>
-                    <td class="impact">P2 - HIGH</td>
-                    <td class="target-class">Web</td>
-                    <td class="vendor">Fancy Product Designer</td>
-                    <td class="accepted">YES</td>
-                    <td class="duplicate">NO</td>
-                    <td class="fixed">YES</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">Sensitive Information Disclosure</td>
-                    <td class="impact">P3 - MEDIUM</td>
-                    <td class="target-class">Web, Desktop</td>
-                    <td class="vendor">Bitdefender</td>
-                    <td class="accepted">YES</td>
-                    <td class="duplicate">NO</td>
-                    <td class="fixed">NO</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">Authentication Bypass</td>
-                    <td class="impact">P2 - HIGH</td>
-                    <td class="target-class">Desktop</td>
-                    <td class="vendor">Malwarebytes</td>
-                    <td class="accepted">YES</td>
-                    <td class="duplicate">NO</td>
-                    <td class="fixed">YES</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">Authentication Bypass</td>
-                    <td class="impact">P4 - LOW</td>
-                    <td class="target-class">Mobile</td>
-                    <td class="vendor">Bitdefender</td>
-                    <td class="accepted">YES</td>
-                    <td class="duplicate">YES</td>
-                    <td class="fixed">YES</td>
-                  </tr>
-                  <tr class="vuln-table-entry">
-                    <td class="type">Application-level DoS</td>
-                    <td class="impact">P3 - MEDIUM</td>
-                    <td class="target-class">Web</td>
-                    <td class="vendor">Bitdefender</td>
-                    <td class="accepted">YES</td>
-                    <td class="duplicate">NO</td>
-                    <td class="fixed">YES</td>
-                  </tr>
-                  <tr class="vuln-table-entry-ctf">
-                    <td class="type">
-                      <a
-                        href="https://github.com/jdgregson/CTF-Writeups/blob/master/AltoroJ/1-index-jsp-content-error-xss.md"
-                        >Reflected XSS</a
-                      >
-                    </td>
-                    <td class="impact">P4 - LOW</td>
-                    <td class="target-class">Web</td>
-                    <td class="vendor">IBM</td>
-                    <td class="accepted">N/A</td>
-                    <td class="duplicate">N/A</td>
-                    <td class="fixed">N/A</td>
                   </tr>
                 </table>
               </div>
@@ -416,11 +274,11 @@
               </div>
 
               <div class="portfolio-item card card-2">
-                <div class="portfolio-title">jdgregson-com</div>
+                <div class="portfolio-title">Stardust</div>
                 <div class="portfolio-content">
                   <div class="portfolio-image">
                     <a
-                      href="https://jdgregson.github.io/stardust-demo/"
+                      href="https://jdgregson.github.io/Stardust"
                       target="_blank"
                     >
                       <img src="portfolio/stardust/stardust.png" />
@@ -429,13 +287,13 @@
                   <div class="portfolio-text">
                     <span class="label">About:</span
                     ><span class="text"
-                      >jdgregson-com is what my apps are made of. A web application
+                      >Stardust is what my apps are made of. A web application
                       framework comprised of a small JavaScript and CSS library
                       with no production dependencies and a build system. The
                       JavaScript library (and application code by default) is
                       TypeScript and compiles back to ES5 for compatibility with
                       Internet Explorer 11. A dark and light theme are provided
-                      using SCSS for the jdgregson-com UI and a separate theme for
+                      using SCSS for the Stardust UI and a separate theme for
                       application SCSS.</span
                     ><br />
                     <span class="label">Technologies:</span
@@ -443,15 +301,15 @@
                     <span class="label">Demo:</span
                     ><span class="text"
                       ><a
-                        href="https://jdgregson.github.io/stardust-demo/"
+                        href="https://jdgregson.github.io/Stardust/"
                         target="_blank"
-                        >https://jdgregson.github.io/stardust-demo/</a
+                        >https://jdgregson.github.io/Stardust/</a
                       ></span
                     ><br />
                     <span class="label">Source:</span
                     ><span class="text"
                       ><a
-                        href="https://github.com/jdgregson/jdgregson-com"
+                        href="https://github.com/jdgregson/Stardust"
                         target="_blank"
                         >GitHub</a
                       ></span
