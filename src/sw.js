@@ -4,7 +4,6 @@ self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(appName).then(cache =>
       cache.addAll([
-        // Base Stardust app files
         'index.html',
         'js/app.js',
         'css/app-theme-dark.css',
@@ -19,6 +18,7 @@ self.addEventListener('install', (e) => {
         'art/appicon-192.png',
         'art/appicon-256.png',
         'art/appicon-512.png',
+
         // App-specific files
         'art/brand.png'
       ])
@@ -26,8 +26,14 @@ self.addEventListener('install', (e) => {
   );
 });
 
-self.addEventListener('fetch', (e) => {
+self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(response => response || fetch(e.request))
+    (async () => {
+      try {
+        return await fetch(e.request);
+      } catch (err) {
+        return caches.match(e.request);
+      }
+    })()
   );
 });

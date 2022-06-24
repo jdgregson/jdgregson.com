@@ -186,12 +186,12 @@ const rebindSelectObjects = () => {
  * not set.
  * @return {object} The options object.
  */
-const getOptions = () => {
+const getOptions = (): object => {
   let options = {
     isFirstLoad: true,
     theme: 'light',
   } as StardustOptions;
-  if (typeof localStorage !== 'undefined') {
+  if (localStorageAvailable()) {
     let savedOptions = localStorage.getItem('options');
     if (savedOptions) {
       options = <StardustOptions>JSON.parse(savedOptions);
@@ -211,7 +211,7 @@ const getOptions = () => {
  * Saves the options object to local storage.
  */
 const saveOptions = () => {
-  if (typeof localStorage !== 'undefined') {
+  if (localStorageAvailable()) {
     localStorage.setItem('options', JSON.stringify(stardust.options));
   }
 };
@@ -223,7 +223,9 @@ const saveOptions = () => {
  *     the options object.
  */
 const resetOptions = (reload = true) => {
-  localStorage.removeItem('options');
+  if (localStorageAvailable()) {
+    localStorage.removeItem('options');
+  }
   stardust.options = getOptions();
   if (reload) {
     document.location.reload();
@@ -450,7 +452,7 @@ const toggleSideMenu = (hide = false) => {
  * @param {string} string An unsafe string.
  * @return {string} A safe string.
  */
-const sanitizeString = (string: string) => {
+const sanitizeString = (string: string): string => {
   return string
     .replace(/<br ?\/?>/g, '\n')
     .replace(/&/g, '&amp;')
@@ -466,7 +468,7 @@ const sanitizeString = (string: string) => {
  * @return {float} A cryptographically-secure random floating point number
  *     between 0 and 1.
  */
-const secureMathRandom = () => {
+const secureMathRandom = (): number => {
   return window.crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295;
 };
 
@@ -484,7 +486,7 @@ const secureMathRandom = () => {
 const secureRandomString = (
   numberOfCharacters = 32,
   useSpecialCharacters = false
-) => {
+): string => {
   let result = '';
   let validChars = [
     '0123456789',
@@ -515,14 +517,12 @@ const applyStardustTheme = (themeName = stardust.options.theme) => {
     themeName = 'light';
   }
   stardust.selectedTheme = themeName;
-  const styles = document.querySelectorAll('.stardust-theme-style');
-  for (let i = 0; i < styles.length; i++) {
-    document.head.removeChild(styles[i]);
-  }
+
   const themeCssFiles = [
     `lib/stardust/css/stardust-theme-${themeName}.css`,
     `css/app-theme-${themeName}.css`,
   ];
+
   for (let i = 0; i < themeCssFiles.length; i++) {
     const style = document.createElement('link');
     style.setAttribute('rel', 'stylesheet');
@@ -530,8 +530,20 @@ const applyStardustTheme = (themeName = stardust.options.theme) => {
     style.setAttribute('href', themeCssFiles[i]);
     document.head.appendChild(style);
   }
+
   self.setTimeout(() => {
-    if (typeof localStorage !== 'undefined') {
+    let styles = document.querySelectorAll('.stardust-theme-style.applied');
+    for (let i = 0; i < styles.length; i++) {
+      document.head.removeChild(styles[i]);
+    }
+    styles = document.querySelectorAll('.stardust-theme-style');
+    for (let i = 0; i < styles.length; i++) {
+      styles[i].classList.add('applied');
+    }
+  }, 100);
+
+  self.setTimeout(() => {
+    if (localStorageAvailable()) {
       localStorage.setItem('stardust-primary-color', getThemePrimaryColor());
     }
   }, 100);
@@ -542,7 +554,7 @@ const applyStardustTheme = (themeName = stardust.options.theme) => {
  * @return {string} Hex, RGB, or other color value representing the primary app
  *     color for the active theme.
  */
-const getThemePrimaryColor = () => {
+const getThemePrimaryColor = (): string => {
   const element = document.createElement('div');
   element.classList.add('stardust-primary-color');
   document.body.appendChild(element);
@@ -671,6 +683,23 @@ const getUrlParameter = (name: string) => {
     : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
+/**
+ * Detects if localStorage access is available.
+ * @return boolean Whether localStorage is available.
+ */
+const localStorageAvailable = (): boolean => {
+  let storage: Storage;
+  try {
+    storage = window.localStorage;
+    const x = '__storage_test__';
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
 /** init **/
 
 /**
@@ -748,7 +777,7 @@ const initStardust = (initOptions: AppOptions) => {
   rebindSelectObjects();
   self.setTimeout(() => {
     hideSplash();
-  }, 1);
+  }, 200);
 };
 
 let stardust: Stardust;

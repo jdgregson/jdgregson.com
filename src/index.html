@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="application-name" content="Stardust App" />
-    <meta name="apple-mobile-web-app-title" content="Stardust App" />
+    <meta name="application-name" content="jdgregson-com" />
+    <meta name="apple-mobile-web-app-title" content="jdgregson-com" />
     <meta name="msapplication-starturl" content="index.html" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="shortcut icon" href="art/appicon-64.png" />
@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="art/appicon-152.png" />
     <link rel="apple-touch-icon" sizes="167x167" href="art/appicon-167.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="art/appicon-180.png" />
-    <meta name="description" content="An app built with Stardust." />
+    <meta name="description" content="Personal website of Jonathan Gregson." />
     <meta name="robots" content="index, follow" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
@@ -27,16 +27,20 @@
   </head>
   <body>
     <div id="outer-wrap" onclick="void(0)">
-      <div id="splash-wrap"></div>
+      <div id="splash-wrap">
+        <div id="splash-inner" style="display: none">
+          <div id="splash-title">Stardust</div>
+          <div id="splash-text">loading 🤞</div>
+        </div>
+      </div>
       <script>
-        if (typeof localStorage !== 'undefined') {
+        try {
           var sdPrimaryColor = localStorage.getItem('stardust-primary-color');
           if (sdPrimaryColor) {
-            document.getElementById(
-              'splash-wrap'
-            ).style.backgroundColor = sdPrimaryColor;
+            document.getElementById('splash-wrap').style.backgroundColor =
+              sdPrimaryColor;
           }
-        }
+        } catch (e) {}
       </script>
 
       <div id="header">
@@ -351,7 +355,7 @@
                     ><br />
                     <span class="label">Technologies:</span
                     ><span class="text"
-                      >TypeScript, Stardust, SCSS, NPM, Git</span
+                      >TypeScript, jdgregson-com, SCSS, NPM, Git</span
                     ><br />
                     <span class="label">Source:</span
                     ><span class="text"
@@ -389,7 +393,7 @@
                     ><br />
                     <span class="label">Technologies:</span
                     ><span class="text"
-                      >TypeScript, Stardust, SCSS, NPM, Git, AWS</span
+                      >TypeScript, jdgregson-com, SCSS, NPM, Git, AWS</span
                     ><br />
                     <span class="label">Demo:</span
                     ><span class="text"
@@ -412,7 +416,7 @@
               </div>
 
               <div class="portfolio-item card card-2">
-                <div class="portfolio-title">Stardust</div>
+                <div class="portfolio-title">jdgregson-com</div>
                 <div class="portfolio-content">
                   <div class="portfolio-image">
                     <a
@@ -425,13 +429,13 @@
                   <div class="portfolio-text">
                     <span class="label">About:</span
                     ><span class="text"
-                      >Stardust is what my apps are made of. A web application
+                      >jdgregson-com is what my apps are made of. A web application
                       framework comprised of a small JavaScript and CSS library
                       with no production dependencies and a build system. The
                       JavaScript library (and application code by default) is
                       TypeScript and compiles back to ES5 for compatibility with
                       Internet Explorer 11. A dark and light theme are provided
-                      using SCSS for the Stardust UI and a separate theme for
+                      using SCSS for the jdgregson-com UI and a separate theme for
                       application SCSS.</span
                     ><br />
                     <span class="label">Technologies:</span
@@ -447,7 +451,7 @@
                     <span class="label">Source:</span
                     ><span class="text"
                       ><a
-                        href="https://github.com/jdgregson/Stardust"
+                        href="https://github.com/jdgregson/jdgregson-com"
                         target="_blank"
                         >GitHub</a
                       ></span

@@ -1,3 +1,8 @@
 node_modules/
-package-lock.json
+build/
 *.sublime-workspace
+.dccache
+*.d.ts
+*.map
+*.css
+*.js.map
