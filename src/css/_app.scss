@@ -106,6 +106,7 @@ a:visited, a:active {
 #vuln-table {
   width: 100%;
   white-space: nowrap;
+  border-collapse: collapse;
 }
 
 #vuln-table-heading {
@@ -113,12 +114,12 @@ a:visited, a:active {
   font-weight: bolder;
 }
 
-.vuln-table-entry-ctf {
-  font-style: italic;
-  opacity: 0.7;
+.vuln-list-row {
+  height: 25px;
 }
 
-#vuln-table .product.undisclosed {
+.vuln-list-row:nth-of-type(2n - 1) {
+  background-color: $SDsecondaryColor;
 }
 
 .about-wrap {
