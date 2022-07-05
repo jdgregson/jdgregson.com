@@ -1,4 +1,4 @@
-interface VulnListIten {
+interface VulnListItem {
   type: string;
   url: string;
   app: string;
@@ -8,7 +8,7 @@ interface VulnListIten {
   fixed: string;
 }
 
-const vulns = [
+const vulns: VulnListItem[] = [
   {
     type: 'Sensitive Information Disclosure',
     url: '',
@@ -146,7 +146,7 @@ const vulns = [
   },
 ];
 
-const getVulnRow = (item: VulnListIten): HTMLTableRowElement => {
+const getVulnRow = (item: VulnListItem): HTMLTableRowElement => {
   const tr = document.createElement('tr');
   if (item.url) {
     tr.innerHTML += `<td><a href="${item.url}">${item.type}</a></td>`;
