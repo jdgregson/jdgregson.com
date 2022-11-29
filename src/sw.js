@@ -18,9 +18,6 @@ self.addEventListener('install', (e) => {
         'art/appicon-192.png',
         'art/appicon-256.png',
         'art/appicon-512.png',
-
-        // App-specific files
-        'art/brand.png'
       ])
     )
   );
