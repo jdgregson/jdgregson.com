@@ -10,6 +10,15 @@ interface VulnListItem {
 
 const vulns: VulnListItem[] = [
   {
+    type: 'Security Feature Bypass',
+    url: 'https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41104',
+    cve: 'CVE-2022-41104',
+    app: 'Excel for Windows',
+    vendor: 'Microsoft',
+    impact: 'P2',
+    target: 'Desktop',
+  },
+  {
     type: 'Sensitive Information Disclosure',
     url: '',
     cve: '',
